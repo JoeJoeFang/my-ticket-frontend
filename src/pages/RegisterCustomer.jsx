@@ -97,7 +97,7 @@ const RegisterCustomer = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:5005/user/auth/customer_register', {
+            const response = await axios.post('https://my-ticket-backend-1.onrender.com/user/auth/customer_register', {
                 Name: registerData.Name,
                 email: registerData.email,
                 password: registerData.password,

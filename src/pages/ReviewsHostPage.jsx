@@ -49,7 +49,7 @@ function ReviewsHostPage() {
                 },
             };
 
-            const response = await axios.get(`http://localhost:5005/comments/${eventId}`, config);
+            const response = await axios.get(`https://my-ticket-backend-1.onrender.com/comments/${eventId}`, config);
             if (response.status === 200 || response.status === 201) {
                 console.log(response.data);
                 const loadedComments = Object.entries(response.data).map(([key, commentArray]) => ({
@@ -74,7 +74,7 @@ function ReviewsHostPage() {
     const handleConfirmReply = async () => {
         const currentDate = new Date().toISOString().split('T')[0];
         try {
-            const response = await axios.put('http://localhost:5005/comments/host', { hostId: hostId, eventId: eventId, userId: currentCommentIndex, review: replyText, Date: currentDate});
+            const response = await axios.put('https://my-ticket-backend-1.onrender.com/comments/host', { hostId: hostId, eventId: eventId, userId: currentCommentIndex, review: replyText, Date: currentDate});
             console.log(response);
             if (response.status === 201 || response.status === 200) {
                 console.log('post comments successfully!');
@@ -104,7 +104,7 @@ function ReviewsHostPage() {
 
     const handleJoinDiscussion = async (comment) => {
         try {
-            const response = await axios.post('http://localhost:5005/comments/host', { hostId: hostId, eventId: eventId, userId: comment.customerId});
+            const response = await axios.post('https://my-ticket-backend-1.onrender.com/comments/host', { hostId: hostId, eventId: eventId, userId: comment.customerId});
 
             console.log(response);
             if (response.status === 201 || response.status === 200) {

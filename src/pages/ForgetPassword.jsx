@@ -36,7 +36,7 @@ export const ForgotPassword = () => {
     const handleSendCode = async () => {
         console.log('Send verification code to:', email);
         try {
-            const response = await axios.post('http://localhost:5005/user/auth/send_email', {
+            const response = await axios.post('https://my-ticket-backend-1.onrender.com/user/auth/send_email', {
                 email: email,
                 role: role
             }, {
@@ -57,7 +57,7 @@ export const ForgotPassword = () => {
     const handleVerifyCode = async () => {
         console.log('Verification code:', email);
         try {
-            const response = await axios.post('http://localhost:5005/user/auth/check_token', {
+            const response = await axios.post('https://my-ticket-backend-1.onrender.com/user/auth/check_token', {
                 email: email,
                 role: role,
                 token: code
@@ -95,7 +95,7 @@ export const ForgotPassword = () => {
 
         console.log('Reset password for:', email);
         try {
-            const response = await axios.post('http://localhost:5005/user/auth/reset_password', {
+            const response = await axios.post('https://my-ticket-backend-1.onrender.com/user/auth/reset_password', {
                 email: email,
                 role: role,
                 token: code,

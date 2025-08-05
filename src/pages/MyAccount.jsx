@@ -34,7 +34,7 @@ const MyAccount = () => {
         }
 
         try {
-            const response = await axios.get(`http://localhost:5005/user/auth/customer?userId=${userId}`);
+            const response = await axios.get(`https://my-ticket-backend-1.onrender.com/user/auth/customer?userId=${userId}`);
             if (response.data) {
                 setCustDetail(response.data);
                 setError(null); // Ensure to clear any previous errors
@@ -54,7 +54,7 @@ const MyAccount = () => {
     const handleRecharge = async () => {
         const userId = localStorage.getItem('userId');
         try {
-            const response = await axios.put('http://localhost:5005/user/auth/customer/recharge', {
+            const response = await axios.put('https://my-ticket-backend-1.onrender.com/user/auth/customer/recharge', {
                 userId: userId,
                 amount:rechargeAmount,
             });

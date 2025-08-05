@@ -29,7 +29,7 @@ const SearchEvents = (props) => {
         eventType: eventTypeParam,
       });
       
-      const response = await axios.get('http://localhost:5005/events/search', {
+      const response = await axios.get('https://my-ticket-backend-1.onrender.com/events/search', {
         params: {
           description: searchDescription, 
           keyWord: searchTitle, 

@@ -43,7 +43,7 @@ export function CommentForm({ cancelForm, fetchComments, closeForm }) {
 
         // Assuming addComment is now prepared to handle this data structure
         try {
-            const response = await axios.put('http://localhost:5005/comments/customer', data, {
+            const response = await axios.put('https://my-ticket-backend-1.onrender.com/comments/customer', data, {
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`,
@@ -129,7 +129,7 @@ function ReviewsCustomerPage() {
                 },
             };
 
-            const response = await axios.get(`http://localhost:5005/comments/${eventId}`, config);
+            const response = await axios.get(`https://my-ticket-backend-1.onrender.com/comments/${eventId}`, config);
             if (response.status === 200 || response.status === 201) {
                 console.log(response.data);
                 const loadedComments = Object.entries(response.data).map(([key, commentArray]) => ({
@@ -157,7 +157,7 @@ function ReviewsCustomerPage() {
 
     const handleJoinDiscussion = async () => {
         try {
-            const response = await axios.post('http://localhost:5005/comments/customer', { customerId: customerId, eventId: eventId });
+            const response = await axios.post('https://my-ticket-backend-1.onrender.com/comments/customer', { customerId: customerId, eventId: eventId });
 
             console.log(response);
             if (response.status === 201 || response.status === 200) {

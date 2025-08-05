@@ -68,7 +68,7 @@ const EventDetails = () => {
                     'Content-Type': 'application/json',
                 },
             };
-            const response = await axios.get(`http://localhost:5005/events/${eventId}`, config);
+            const response = await axios.get(`https://my-ticket-backend-1.onrender.com/events/${eventId}`, config);
             if (response.status === 200) {
                 const event = response.data;
                 const startDate = new Date(event.startDate);
@@ -173,7 +173,7 @@ const EventDetails = () => {
         };
         console.log('requestBody', requestBody);
         try {
-            const response = await axios.put('http://localhost:5005/bookings', requestBody, {
+            const response = await axios.put('https://my-ticket-backend-1.onrender.com/bookings', requestBody, {
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`,

@@ -35,7 +35,7 @@ export const LoginCustomer = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:5005/user/auth/login', loginInfo, {
+            const response = await axios.post('https://my-ticket-backend-1.onrender.com/user/auth/login', loginInfo, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -196,7 +196,7 @@ export const LoginHost = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:5005/user/auth/login', loginInfo, {
+            const response = await axios.post('https://my-ticket-backend-1.onrender.com/user/auth/login', loginInfo, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

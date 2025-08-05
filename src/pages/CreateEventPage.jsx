@@ -249,7 +249,7 @@ const CreateNewEvent = () => {
         };
         console.log('requestBody', requestBody);
         try {
-            const response = await axios.post('http://localhost:5005/events/new', requestBody, {
+            const response = await axios.post('https://my-ticket-backend-1.onrender.com/events/new', requestBody, {
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`,

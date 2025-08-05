@@ -34,7 +34,7 @@ const MyHostedEventsPage = () => {
         setIsLoading(true);
         setError(null);
         try {
-            const response = await axios.get(`http://localhost:5005/events/host/${userId}`);
+            const response = await axios.get(`https://my-ticket-backend-1.onrender.com/events/host/${userId}`);
             setEvents(response.data);
         } catch (error) {
             console.error("There was an error fetching the events:", error);
@@ -78,7 +78,7 @@ const MyHostedEventsPage = () => {
             };
             console.log('requestBody', requestBody);
             try {
-                const response = await axios.put(`http://localhost:5005/bookings/cancel_event/${userId}`, requestBody, {
+                const response = await axios.put(`https://my-ticket-backend-1.onrender.com/bookings/cancel_event/${userId}`, requestBody, {
                     headers: {
                         'Content-Type': 'application/json',
                         Authorization: `Bearer ${token}`,

@@ -2,7 +2,7 @@
   "name": "9900-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://JoeJoeFang.github.io/9900",
+  "homepage": "https://JoeJoeFang.github.io/my-ticket-frontend",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.11.4",

@@ -71,7 +71,7 @@ const BookingList = () => {
         setIsLoading(true);
         setError(null);
         try {
-            const response = await axios.get(`http://localhost:5005/bookings/${userId}`);
+            const response = await axios.get(`https://my-ticket-backend-1.onrender.com/bookings/${userId}`);
             if (response.status === 200 || response.status === 201) {
                 console.log(response.data);
                 setEvents(response.data);
@@ -92,7 +92,7 @@ const BookingList = () => {
         const userId = localStorage.getItem('userId');
         setIsLoading(true);
         try {
-            const response = await axios.get(`http://localhost:5005/bookings/${userId}/recommendation`);
+            const response = await axios.get(`https://my-ticket-backend-1.onrender.com/bookings/${userId}/recommendation`);
             setIsLoading(false);
             if (response.status === 200) {
                 console.log("Recommended events:", response.data);
@@ -130,7 +130,7 @@ const BookingList = () => {
             };
             console.log('requestBody', requestBody);
             try {
-                const response = await axios.put(`http://localhost:5005/bookings/cancel/${userId}`, requestBody, {
+                const response = await axios.put(`https://my-ticket-backend-1.onrender.com/bookings/cancel/${userId}`, requestBody, {
                     headers: {
                         'Content-Type': 'application/json',
                         Authorization: `Bearer ${token}`,

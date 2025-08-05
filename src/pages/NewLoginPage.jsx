@@ -73,7 +73,7 @@ export const CombinedLogin = () => {
         const identity = activeTab === 0 ? 'customer' : 'host';
 
         try {
-            const response = await axios.post(`http://localhost:5005/user/auth/login`, {
+            const response = await axios.post(`https://my-ticket-backend-1.onrender.com/user/auth/login`, {
                 email: loginData.email,
                 password: loginData.password,
                 identity: identity,
